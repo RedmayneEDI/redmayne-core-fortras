@@ -1,0 +1,29 @@
+name: dotnet build
+on:
+  - push
+  - pull_request
+
+env:
+  ASPNETCORE_ENVIRONMENT: Production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '5.x', '6.x', '8.x' ]
+
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup dotnet ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Display dotnet version
+        run: dotnet --version
+      - name: DotNet Restore 
+        run: dotnet restore
+      - name: DotNet Build
+        run: dotnet build --no-restore -c Release
+      - name: DotNet Test
+        run: dotnet test --no-build --no-restore -c Release --verbosity normal
