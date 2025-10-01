@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedmayneEDI.Formats.Fortras100", "RedmayneEDI.Formats.Fortras100\RedmayneEDI.Formats.Fortras100.csproj", "{DDAD4473-1F6A-4890-B497-6BD47748564C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedmayneEDI.Formats.Fortras100.Tests", "RedmayneEDI.Formats.Fortras100.Tests\RedmayneEDI.Formats.Fortras100.Tests.csproj", "{C010F49C-FE6C-48C1-B1B4-10EB5246F3A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDAD4473-1F6A-4890-B497-6BD47748564C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDAD4473-1F6A-4890-B497-6BD47748564C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDAD4473-1F6A-4890-B497-6BD47748564C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDAD4473-1F6A-4890-B497-6BD47748564C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C010F49C-FE6C-48C1-B1B4-10EB5246F3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C010F49C-FE6C-48C1-B1B4-10EB5246F3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C010F49C-FE6C-48C1-B1B4-10EB5246F3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C010F49C-FE6C-48C1-B1B4-10EB5246F3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {834A7AB0-CC7B-4865-B255-9A6C12538531}
+	EndGlobalSection
+EndGlobal

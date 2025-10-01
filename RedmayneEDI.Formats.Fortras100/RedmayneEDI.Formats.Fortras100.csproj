@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+    <ApplicationIcon>RedmayneEDI.ico</ApplicationIcon>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>RedmayneEDI</Title>
+    <Description>Provides Electronic Data Interchange (EDI) support for reading and writing Fortras100 BORD512, STAT512, and ENTL512 for .Net Core projects.</Description>
+    <PackageIcon>RedmayneEDI.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>edi,fortras,fortras100,bord,bord512,stat,stat512,entl,entl512</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="RedmayneEDI.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\RedmayneEDI.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="RedmayneEDI.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
