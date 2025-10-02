@@ -9,16 +9,16 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet-version: [ '5.x', '6.x', '8.x' ]
+    #strategy:
+    #  matrix:
+    #    dotnet-version: [ '5.x', '6.x', '8.x' ]
 
     steps:
       - uses: actions/checkout@v5
-      - name: Setup dotnet ${{ matrix.dotnet-version }}
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: ${{ matrix.dotnet-version }}
+     # - name: Setup dotnet ${{ matrix.dotnet-version }}
+     #   uses: actions/setup-dotnet@v4
+     #   with:
+     #     dotnet-version: ${{ matrix.dotnet-version }}
       - name: Display dotnet version
         run: dotnet --version
       - name: DotNet Restore 
