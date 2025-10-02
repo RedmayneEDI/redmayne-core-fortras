@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       packages: write
+      contents: write
     strategy:
       matrix:
         dotnet-version: [ '9.x' ]
