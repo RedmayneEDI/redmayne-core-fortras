@@ -1,0 +1,42 @@
+name: publish artifact
+on: 
+  push:
+    tags:
+      - '*'
+
+env:
+  ASPNETCORE_ENVIRONMENT: Production
+  NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}     
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '9.x' ]
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+          source-url: https://nuget.pkg.github.com/RedmayneEDI/index.json
+
+      - name: Display dotnet version
+        run: dotnet --version
+
+      - name: DotNet Restore 
+        run: dotnet restore
+
+      - name: DotNet Build
+        run: dotnet build --no-restore -c Release
+        
+      - name: Build solution and generate NuGet package
+        run: |  
+          cd RedmayneEDI.Formats.Fortras100
+          dotnet pack -c Release -o out  
+
+      - name: Push generated package to GitHub registry
+        run: dotnet nuget push ./RedmayneEDI.Formats.Fortras100/out/*.nupkg --skip-duplicate --no-symbols
