@@ -33,6 +33,9 @@ jobs:
       - name: DotNet Build
         run: dotnet build --no-restore -c Release
         
+      - name: DotNet Add Source
+        run: dotnet nuget add source --username RedmayneEDI --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/RedmayneEDI/index.json"
+
       - name: Build solution and generate NuGet package
         run: |  
           cd RedmayneEDI.Formats.Fortras100
