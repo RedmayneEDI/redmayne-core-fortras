@@ -11,6 +11,8 @@ env:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     strategy:
       matrix:
         dotnet-version: [ '9.x' ]
